@@ -1,0 +1,13 @@
+export type Token={id:string;name:string;kind:"herb"|"poison";grade?:"下品"|"中品"|"上品";steps:number;price:number;bonusCultivation?:number;bonusStones?:number;bonusCrystals?:number};
+const herb=(id:string,name:string,grade:Token["grade"],steps:number,price:number,extra:Partial<Token>={}):Token=>({id,name,kind:"herb",grade,steps,price,...extra});
+export const HERBS:Token[]=[
+herb("spirit-low","聚靈草","下品",1,3),herb("spirit-mid","聚靈草","中品",2,6),herb("spirit-high","聚靈草","上品",4,12),
+herb("ginseng-low","黃精參","下品",1,4,{bonusStones:1}),herb("ginseng-mid","黃精參","中品",1,8,{bonusStones:2}),herb("ginseng-high","黃精參","上品",1,16,{bonusStones:4}),
+herb("moon-low","月華草","下品",1,5),herb("moon-mid","月華草","中品",1,10),herb("moon-high","月華草","上品",1,20),
+herb("reishi-low","紫靈芝","下品",1,8),herb("reishi-mid","紫靈芝","中品",1,16,{bonusCultivation:1}),herb("reishi-high","紫靈芝","上品",1,30,{bonusCultivation:1}),
+herb("marrow-low","洗髓花","下品",1,7),herb("marrow-mid","洗髓花","中品",1,14),herb("marrow-high","洗髓花","上品",1,28,{bonusCultivation:1}),
+herb("vermillion-low","朱果","下品",2,8,{bonusCultivation:1}),herb("vermillion-mid","朱果","中品",2,16,{bonusCultivation:2}),herb("vermillion-high","朱果","上品",2,32,{bonusCultivation:4}),
+herb("foundation-low","築基草","下品",1,10,{bonusCrystals:1}),herb("foundation-mid","築基草","中品",1,20,{bonusCrystals:1,bonusCultivation:1}),herb("foundation-high","築基草","上品",1,40,{bonusCrystals:1,bonusCultivation:3})];
+export const POISONS:Token[]=[1,1,1,1,2,2,3].map((n,i)=>({id:`poison-${n}-${i}`,name:`丹毒（${n}步）`,kind:"poison",steps:n,price:0}));
+export const CHANCES=[
+["靈谷妖蛾","你在靈谷採藥時驚動了一隻鍊氣二期妖蛾。","獲得下品聚靈草 ×1","成功脫身","獲得丹毒（1步）×1"],["礦洞蛇妖","礦洞深處盤踞著鍊氣四期蛇妖。","獲得鍊氣晶石 ×1","安全逃離","獲得丹毒（2步）×1"],["假道士","小鎮道人正在販售假飛升秘法。","識破騙局，靈石 +1","假道士逃離","被騙，靈石 -1"],["山林山賊","山路上忽然衝出數名山賊。","擊退山賊，修為 +1","成功脫身","靈石 -2"],["偶遇道友","尋寶途中遇到左手邊玩家，兩人爭寶。","晶石 +1","同數，平安無事","修為 -1"],["佛像寶盒","破廟佛像裂縫中藏著一個寶盒。","冰魄蓮 +1","寶盒空空","下品聚靈草 -1"],["古井殘卷","古井底部發現一卷殘缺功法。","修為 +1","內容模糊","修為 -1"],["山神祭壇","荒廢祭壇飄出淡淡靈氣。","永久起始格 +1","無事發生","獲得丹毒（1步）×1"],["流浪丹師","流浪丹師鍊丹遇上危機。","獲得下品黃精參 ×1","靈石 +1","丹師殞落，無影響"],["靈猴搶包","靈猴忽然搶走你的包袱。","晶石 +1","追回包袱","靈石 -2"],["神秘商販","黑夜中出現一名神秘商販。","中下品最貴藥材減4靈石","減1靈石","無事發生"],["古墓戰妖狼群","你與左邊玩家探墓，妖狼擋路。","兩人修為與靈石各 +1","安全逃離","兩人修為 -1"],["靈泉","山谷深處發現一口靈泉。","下品聚靈草升為中品","取回下品聚靈草","無事發生"],["古修洞府","山壁後方藏著古修洞府。","晶石與下品黃精參各 +1","靈石 +2","一無所獲"],["夜宿客棧","旅途中於客棧歇腳。","靈石 +2","安穩休息","靈石 -1"],["天降流星","夜空落下一顆奇異流星。","晶石 +1","一無所獲","修為 -1"],["迷霧山谷","誤入一片神秘迷霧。","獲得下品聚靈草 ×1","順利走出","獲得丹毒（1步）×1"],["靈獸幼崽","你發現一隻受傷的靈獸幼崽。","冰魄蓮 +1","治好後放生","修為 -1"],["邪修遺物","路旁發現邪修遺骸和乾坤袋。","晶石與下品黃精參各 +1","無收穫","獲得丹毒（1步）×1"],["天道機緣","天道降下一絲感悟。","永久起始格 +1，晶石 +1","若有所悟","錯失機緣"]].map((c,i)=>({id:i+1,name:c[0],story:c[1],success:c[2],safe:c[3],failure:c[4]}));
