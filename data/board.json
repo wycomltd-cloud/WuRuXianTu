@@ -1,0 +1,1 @@
+{"status":"provisional","note":"原始規則未提供逐格獎勵表，正式資料待作者確認。","rewardFormula":{"cultivation":"floor(position / 4)","spiritStones":"2 + floor(position / 3)","crystal":"position >= 8 ? 1 : 0"}}

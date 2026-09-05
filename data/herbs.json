@@ -1,0 +1,9 @@
+[
+{"family":"聚靈草","role":"移動型","grades":[{"grade":"下品","price":3,"steps":1},{"grade":"中品","price":6,"steps":2},{"grade":"上品","price":12,"steps":4}]},
+{"family":"黃精參","role":"靈石型","grades":[{"grade":"下品","price":4,"steps":1,"stones":1},{"grade":"中品","price":8,"steps":1,"stones":2},{"grade":"上品","price":16,"steps":1,"stones":4}]},
+{"family":"月華草","role":"控牌型","grades":[{"grade":"下品","price":5,"steps":1,"effect":"下次可重抽一次"},{"grade":"中品","price":10,"steps":1,"effect":"下次抽2選1"},{"grade":"上品","price":20,"steps":1,"effect":"下次抽4選1"}]},
+{"family":"紫靈芝","role":"增幅型","grades":[{"grade":"下品","price":8,"steps":1,"effect":"下一非丹毒藥材步數×2"},{"grade":"中品","price":16,"steps":1,"cultivation":1,"effect":"下一非丹毒藥材步數×2"},{"grade":"上品","price":30,"steps":1,"cultivation":1,"startPosition":1,"effect":"下一非丹毒藥材步數×2"}]},
+{"family":"洗髓花","role":"淨化型","grades":[{"grade":"下品","price":7,"steps":1,"effect":"移除其後第一顆丹毒"},{"grade":"中品","price":14,"steps":1,"effect":"移除其後兩顆丹毒"},{"grade":"上品","price":28,"steps":1,"cultivation":1,"effect":"移除其後兩顆丹毒"}]},
+{"family":"朱果","role":"修為型","grades":[{"grade":"下品","price":8,"steps":2,"cultivation":1},{"grade":"中品","price":16,"steps":2,"cultivation":2},{"grade":"上品","price":32,"steps":2,"cultivation":4}]},
+{"family":"築基草","role":"晶石型","grades":[{"grade":"下品","price":10,"steps":1,"crystals":1},{"grade":"中品","price":20,"steps":1,"crystals":1,"cultivation":1},{"grade":"上品","price":40,"steps":1,"crystals":1,"cultivation":3}],"diamondBonus":1}
+]
